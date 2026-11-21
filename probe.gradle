@@ -1,0 +1,17 @@
+// Init script: print the Minecraft jars on the client compile classpath.
+allprojects {
+    afterEvaluate { p ->
+        p.tasks.register('printCp') {
+            doLast {
+                try {
+                    def cp = p.sourceSets.client.compileClasspath.files
+                    cp.findAll { it.name.toLowerCase().contains('minecraft') }.each {
+                        println "JAR: " + it.absolutePath
+                    }
+                } catch (Exception e) {
+                    println "ERR: " + e.message
+                }
+            }
+        }
+    }
+}

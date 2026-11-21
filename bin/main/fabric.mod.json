@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "mcagent",
+	"version": "${version}",
+	"name": "MCAgent",
+	"description": "In-game AI agent: configure any LLM API and let the AI play Minecraft for you. Chat @mcagent <goal> and it plans and executes actions.",
+	"authors": [
+		"MCAgent"
+	],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/mcagent/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"com.mcagent.MCAgentMod"
+		],
+		"client": [
+			"com.mcagent.client.MCAgentClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"fabric-api": "*",
+		"minecraft": "~1.21.11",
+		"java": ">=21"
+	}
+}
